@@ -9,20 +9,17 @@
     </parent>
 
     <groupId>mall.fruit.devil</groupId>
-    <artifactId>devil-rubber</artifactId>
+    <artifactId>devil-mbg</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>devil-rubber</name>
-    <packaging>jar</packaging>
-
-    <properties>
-    </properties>
-
-    <dependencies>
-
-    </dependencies>
+    <name>devil-mbg</name>
+    <description>Demo project for Spring Boot</description>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 
