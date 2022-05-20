@@ -2,6 +2,7 @@ package mall.fruit.devil.devilmbg;
 
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
+import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -10,11 +11,10 @@ public class MPGeneratorTest {
 
     @Test
     public void run(){
-        FastAutoGenerator.create("jdbc:mysql://43.138.158.204:3306/devil","luffy","luffy159265")
+        FastAutoGenerator.create("jdbc:mysql://43.138.158.204:3306/devil?useUnicode=true&useSSL=false&characterEncoding=utf8","luffy","luffy159265")
                 .globalConfig(builder->{
                     builder.author("flame")
                             .enableSwagger()
-                            .fileOverride()
                             .outputDir("D:\\temp\\mall\\test\\devil-fruit-mall\\devil-mbg\\src\\main\\java");
                 })
                 .packageConfig(builder -> {
