@@ -1,5 +1,5 @@
-datasource:
-  name:test
-  url: jdbc:mysql://43.138.158.204:3306/devil
-  username:luffy
-  password:luffy159265
+Spring:
+  datasource:
+    url: jdbc:mysql://43.138.158.204:3306/devil
+    username: luffy
+    password: luffy159265
