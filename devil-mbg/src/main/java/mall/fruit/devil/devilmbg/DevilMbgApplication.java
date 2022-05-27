@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("mall.fruit.devil.devilmbg.mapper")
+@MapperScan({"mall.fruit.devil.devilmbg.mapper","mall.fruit.devil.devilmbg.mappercustom"})
 public class DevilMbgApplication {
 
     public static void main(String[] args) {

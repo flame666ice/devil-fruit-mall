@@ -3,3 +3,9 @@ Spring:
     url: jdbc:mysql://43.138.158.204:3306/devil
     username: luffy
     password: luffy159265
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath:mappercustom/*.xml
+    - classpath*:mall/**/mapper/*.xml

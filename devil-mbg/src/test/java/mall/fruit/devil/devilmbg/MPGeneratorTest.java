@@ -22,7 +22,7 @@ public class MPGeneratorTest {
                             .pathInfo(Collections.singletonMap(OutputFile.xml,"D:\\temp\\mall\\test\\devil-fruit-mall\\devil-mbg\\src\\main\\resources\\mapper"));
                 })
                 .strategyConfig(builder -> {
-                    builder.controllerBuilder().enableRestStyle();
+                    builder.controllerBuilder().enableRestStyle().mapperBuilder().enableBaseResultMap();
                 })
                 .execute();
 

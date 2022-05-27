@@ -4,14 +4,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import mall.fruit.devil.devilcommon.api.CommonPage;
 import mall.fruit.devil.devilcommon.api.CommonResult;
+import mall.fruit.devil.devilmbg.entitycustom.OmsOrderQueryParam;
 import mall.fruit.devil.devilmbg.entity.OmsOrder;
 import mall.fruit.devil.devilmbg.service.impl.OmsOrderServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.awt.print.PrinterAbortException;
 
 /**
  * <p>
@@ -32,7 +32,9 @@ public class OmsOrderController {
 
     @ApiOperation("查询订单")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public CommonResult<CommonPage<OmsOrder>> list(OmsOrderQuery){
+    public CommonResult<CommonPage<OmsOrder>> list(OmsOrderQueryParam omsOrderQueryParam,
+                                                   @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize,
+                                                   @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum){
 
     }
 
