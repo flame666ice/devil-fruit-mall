@@ -1,5 +1,6 @@
 package mall.fruit.devil.devilmbg.mappercustom;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import mall.fruit.devil.devilmbg.entity.OmsOrder;
 import mall.fruit.devil.devilmbg.entitycustom.OmsOrderDeliveryParam;
@@ -9,12 +10,12 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface OmsOrderDao {
+public interface    OmsOrderDao {
 
     /**
      * 条件查询订单
      */
-    List<OmsOrder> getList(IPage<OmsOrder> page, @Param("queryParam") OmsOrderQueryParam queryParam);
+    IPage<OmsOrder> getList(IPage<OmsOrder> page, @Param("queryParam") OmsOrderQueryParam queryParam);
 
     /**
      * 批量发货

@@ -2,4 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.devilmbg.mapper.PmsProductAttributeValueMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="mall.fruit.devil.devilmbg.entity.PmsProductAttributeValue">
+        <id column="id" property="id" />
+        <result column="product_id" property="productId" />
+        <result column="product_attribute_id" property="productAttributeId" />
+        <result column="value" property="value" />
+    </resultMap>
+
 </mapper>

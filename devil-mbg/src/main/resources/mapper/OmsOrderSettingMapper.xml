@@ -2,4 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.devilmbg.mapper.OmsOrderSettingMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="mall.fruit.devil.devilmbg.entity.OmsOrderSetting">
+        <id column="id" property="id" />
+        <result column="flash_order_overtime" property="flashOrderOvertime" />
+        <result column="normal_order_overtime" property="normalOrderOvertime" />
+        <result column="confirm_overtime" property="confirmOvertime" />
+        <result column="finish_overtime" property="finishOvertime" />
+        <result column="comment_overtime" property="commentOvertime" />
+    </resultMap>
+
 </mapper>

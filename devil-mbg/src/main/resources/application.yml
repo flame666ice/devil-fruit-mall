@@ -9,3 +9,6 @@ mybatis:
     - classpath:mapper/*.xml
     - classpath:mappercustom/*.xml
     - classpath*:mall/**/mapper/*.xml
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true

@@ -15,11 +15,11 @@ public class MPGeneratorTest {
                 .globalConfig(builder->{
                     builder.author("flame")
                             .enableSwagger()
-                            .outputDir("D:\\temp\\mall\\test\\devil-fruit-mall\\devil-mbg\\src\\main\\java");
+                            .outputDir("D:\\temp\\mall\\test\\devil-fruit-mall\\devil-test\\src\\main\\java");
                 })
                 .packageConfig(builder -> {
                     builder.parent("mall.fruit.devil.devilmbg")
-                            .pathInfo(Collections.singletonMap(OutputFile.xml,"D:\\temp\\mall\\test\\devil-fruit-mall\\devil-mbg\\src\\main\\resources\\mapper"));
+                            .pathInfo(Collections.singletonMap(OutputFile.xml,"D:\\temp\\mall\\test\\devil-fruit-mall\\devil-test\\src\\main\\resources\\mapper"));
                 })
                 .strategyConfig(builder -> {
                     builder.controllerBuilder().enableRestStyle().mapperBuilder().enableBaseResultMap();

@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.devilmbg.mapper.SmsHomeNewProductMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="mall.fruit.devil.devilmbg.entity.SmsHomeNewProduct">
+        <id column="id" property="id" />
+        <result column="product_id" property="productId" />
+        <result column="product_name" property="productName" />
+        <result column="recommend_status" property="recommendStatus" />
+        <result column="sort" property="sort" />
+    </resultMap>
+
 </mapper>

@@ -1,6 +1,6 @@
 package mall.fruit.devil.devilmbg.entitycustom;
 
-import com.macro.mall.validator.FlagValidator;
+import mall.fruit.devil.devilmbg.validator.FlagValidator;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

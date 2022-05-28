@@ -8,7 +8,7 @@ import lombok.Setter;
  * 查询单个商品修改后返回的结果
  * Created by macro on 2018/4/26.
  */
-public class PmsProductResult extends com.macro.mall.dto.PmsProductParam {
+public class PmsProductResult extends mall.fruit.devil.devilmbg.entitycustom.PmsProductParam {
     @Getter
     @Setter
     @ApiModelProperty("商品所选分类的父id")
