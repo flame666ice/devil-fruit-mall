@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import mall.fruit.devil.devilcommon.api.CommonPage;
 import mall.fruit.devil.devilcommon.api.CommonResult;
 import mall.fruit.devil.devilmbg.entity.CmsSubject;
+import mall.fruit.devil.devilmbg.entitycustom.OmsOrderDeliveryParam;
 import mall.fruit.devil.devilmbg.service.ICmsSubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,4 +52,5 @@ public class CmsSubjectController {
         Page<CmsSubject> pageInfo = iCmsSubjectService.page(productPage,queryWrapper);
         return CommonResult.success(CommonPage.restPage(pageInfo));
     }
+
 }
