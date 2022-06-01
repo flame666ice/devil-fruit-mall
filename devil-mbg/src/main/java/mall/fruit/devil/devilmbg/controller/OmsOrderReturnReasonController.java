@@ -3,6 +3,7 @@ package mall.fruit.devil.devilmbg.controller;
 import com.baomidou.mybatisplus.core.conditions.AbstractWrapper;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -10,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import mall.fruit.devil.devilcommon.api.CommonPage;
 import mall.fruit.devil.devilcommon.api.CommonResult;
 import mall.fruit.devil.devilmbg.entity.OmsOrderReturnReason;
+import mall.fruit.devil.devilmbg.entitycustom.UpdateAdminPasswordParam;
 import mall.fruit.devil.devilmbg.mapper.OmsOrderReturnReasonMapper;
 import mall.fruit.devil.devilmbg.service.IOmsOrderReturnReasonService;
 import mall.fruit.devil.devilmbg.service.impl.OmsOrderReturnReasonServiceImpl;
@@ -83,4 +85,32 @@ public class OmsOrderReturnReasonController {
         Page<OmsOrderReturnReason> resultPage= omsOrderReturnReasonMapper.selectPage(queryPage, Wrappers.emptyWrapper());
         return CommonResult.success(CommonPage.restPage(resultPage));
     }
+
+    @ApiOperation("获取单个退货原因详情信息")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public CommonResult<OmsOrderReturnReason> getItem(@PathVariable Long id) {
+        OmsOrderReturnReason reason = omsOrderReturnReasonMapper.selectById(id);
+        return CommonResult.success(reason);
+    }
+
+
+    @ApiOperation("修改退货原因启用状态")
+    @RequestMapping(value = "/update/status", method = RequestMethod.POST)
+    public CommonResult updateStatus(@RequestParam(value = "status") Integer status,
+                                     @RequestParam("ids") List<Long> ids) {
+        int count ;
+        if(!status.equals(0) && !status.equals(1))
+            count = 0;
+        OmsOrderReturnReason record = new OmsOrderReturnReason();
+        record.setStatus(status);
+
+        UpdateWrapper<OmsOrderReturnReason> updateWrapper = new UpdateWrapper<OmsOrderReturnReason>();
+        updateWrapper.in("id",ids);
+        count = omsOrderReturnReasonMapper.update(record,updateWrapper);
+        if (count > 0) {
+            return CommonResult.success(count);
+        }
+        return CommonResult.failed();
+    }
+
 }

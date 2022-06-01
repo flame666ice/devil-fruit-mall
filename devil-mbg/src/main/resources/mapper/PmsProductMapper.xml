@@ -48,4 +48,10 @@
         <result column="product_category_name" property="productCategoryName" />
     </resultMap>
 
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="mall.fruit.devil.devilmbg.entity.PmsProduct">
+        <result column="description" jdbcType="LONGVARCHAR" property="description" />
+        <result column="detail_desc" jdbcType="LONGVARCHAR" property="detailDesc" />
+        <result column="detail_html" jdbcType="LONGVARCHAR" property="detailHtml" />
+        <result column="detail_mobile_html" jdbcType="LONGVARCHAR" property="detailMobileHtml" />
+    </resultMap>
 </mapper>
