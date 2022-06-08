@@ -20,6 +20,7 @@
         <module>devil-rubber</module>
         <module>devil-mbg</module>
         <module>devil-common</module>
+        <module>devil-security</module>
     </modules>
 
 
@@ -32,6 +33,7 @@
         <mybatis-plus-generator.version>3.5.2</mybatis-plus-generator.version>
         <velocity.version>2.3</velocity.version>
         <minio.version>7.1.0</minio.version>
+        <jjwt.version>0.9.0</jjwt.version>
     </properties>
 
     <dependencies>
@@ -58,6 +60,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -81,6 +88,11 @@
                 <groupId>io.minio</groupId>
                 <artifactId>minio</artifactId>
                 <version>${minio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
         </dependencies>
 
