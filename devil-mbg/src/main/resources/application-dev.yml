@@ -1,0 +1,13 @@
+Spring:
+  datasource:
+    url: jdbc:mysql://43.138.158.204:3306/devil
+    username: luffy
+    password: luffy159265
+
+
+  redis:
+    host: 43.138.158.204 # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 6379 # Redis服务器连接端口
+    password: luffy159265 # Redis服务器连接密码（默认为空）
+    timeout: 300ms # 连接超时时间（毫秒）
