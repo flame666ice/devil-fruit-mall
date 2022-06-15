@@ -1,4 +1,4 @@
-package service;
+package mall.fruit.devil.devilcommon.service;
 
 import java.util.List;
 import java.util.Map;

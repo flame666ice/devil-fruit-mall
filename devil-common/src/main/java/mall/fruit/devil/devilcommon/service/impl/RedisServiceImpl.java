@@ -1,8 +1,8 @@
-package service.impl;
+package mall.fruit.devil.devilcommon.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import service.RedisService;
+import mall.fruit.devil.devilcommon.service.RedisService;
 
 import java.util.List;
 import java.util.Map;
