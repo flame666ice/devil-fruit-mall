@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mall.fruit.devil.devilmbg.mappercustom.PmsProductDao">
-    <resultMap id="updateInfoMap" type="mall.fruit.devil.devilmbg.entitycustom.PmsProductResult" extends="mall.fruit.devil.devilmbg.mapper.PmsProductMapper.ResultMapWithBLOBs">
+<mapper namespace="mall.fruit.devil.mappercustom.PmsProductDao">
+    <resultMap id="updateInfoMap" type="mall.fruit.devil.entitycustom.PmsProductResult" extends="PmsProductMapper.ResultMapWithBLOBs">
         <result column="cateParentId" jdbcType="BIGINT" property="cateParentId" />
-        <collection property="productLadderList" columnPrefix="ladder_" resultMap="mall.fruit.devil.devilmbg.mapper.PmsProductLadderMapper.BaseResultMap">
+        <collection property="productLadderList" columnPrefix="ladder_" resultMap="PmsProductLadderMapper.BaseResultMap">
         </collection>
-        <collection property="productFullReductionList" columnPrefix="full_" resultMap="mall.fruit.devil.devilmbg.mapper.PmsProductFullReductionMapper.BaseResultMap">
+        <collection property="productFullReductionList" columnPrefix="full_" resultMap="PmsProductFullReductionMapper.BaseResultMap">
         </collection>
-        <collection property="memberPriceList" columnPrefix="member_" resultMap="mall.fruit.devil.devilmbg.mapper.PmsMemberPriceMapper.BaseResultMap">
+        <collection property="memberPriceList" columnPrefix="member_" resultMap="PmsMemberPriceMapper.BaseResultMap">
         </collection>
-        <collection property="skuStockList" columnPrefix="sku_" resultMap="mall.fruit.devil.devilmbg.mapper.PmsSkuStockMapper.BaseResultMap">
+        <collection property="skuStockList" columnPrefix="sku_" resultMap="PmsSkuStockMapper.BaseResultMap">
         </collection>
-        <collection property="productAttributeValueList" columnPrefix="attribute_" resultMap="mall.fruit.devil.devilmbg.mapper.PmsProductAttributeValueMapper.BaseResultMap">
+        <collection property="productAttributeValueList" columnPrefix="attribute_" resultMap="PmsProductAttributeValueMapper.BaseResultMap">
         </collection>
         <collection property="subjectProductRelationList" column="{productId=id}" select="selectSubjectProductRelationByProductId"/>
         <collection property="prefrenceAreaProductRelationList" column="{productId=id}" select="selectPrefrenceAreaProductRelationByProductId"/>
@@ -35,10 +35,10 @@
         LEFT JOIN pms_product_attribute_value a ON a.product_id=p.id
         WHERE p.id=#{id};
     </select>
-    <select id="selectSubjectProductRelationByProductId" resultMap="mall.fruit.devil.devilmbg.mapper.CmsSubjectProductRelationMapper.BaseResultMap">
+    <select id="selectSubjectProductRelationByProductId" resultMap="CmsSubjectProductRelationMapper.BaseResultMap">
         select * from cms_subject_product_relation where product_id=#{productId}
     </select>
-    <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="mall.fruit.devil.devilmbg.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap">
+    <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="mall.fruit.devil.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap">
         select * from cms_prefrence_area_product_relation where product_id=#{productId}
     </select>
 

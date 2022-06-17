@@ -20,7 +20,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Lazy
     @Autowired(required = false)
     private DynamicSecurityService dynamicSecurityService;
 

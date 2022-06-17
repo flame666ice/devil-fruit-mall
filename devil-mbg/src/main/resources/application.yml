@@ -7,6 +7,8 @@ spring:
     multipart:
       enabled: true #开启文件上传
       max-file-size: 10MB #限制文件上传大小为10M
+  main:
+    allow-circular-references: true
 
 mybatis:
   mapper-locations:
@@ -17,6 +19,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: mall.fruit.devil.entity,mall.fruit.devil.entitycustom
 
 jwt:
   tokenHeader: Authorization #JWT存储的请求头

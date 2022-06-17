@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mall.fruit.devil.devilmbg.mapper.UmsMemberStatisticsInfoMapper">
+<mapper namespace="UmsMemberStatisticsInfoMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="mall.fruit.devil.devilmbg.entity.UmsMemberStatisticsInfo">
+    <resultMap id="BaseResultMap" type="UmsMemberStatisticsInfo">
         <id column="id" property="id" />
         <result column="member_id" property="memberId" />
         <result column="consume_amount" property="consumeAmount" />

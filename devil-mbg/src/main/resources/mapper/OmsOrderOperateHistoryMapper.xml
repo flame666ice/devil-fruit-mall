@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mall.fruit.devil.devilmbg.mapper.OmsOrderOperateHistoryMapper">
+<mapper namespace="OmsOrderOperateHistoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="mall.fruit.devil.devilmbg.entity.OmsOrderOperateHistory">
+    <resultMap id="BaseResultMap" type="OmsOrderOperateHistory">
         <id column="id" property="id" />
         <result column="order_id" property="orderId" />
         <result column="operate_man" property="operateMan" />
