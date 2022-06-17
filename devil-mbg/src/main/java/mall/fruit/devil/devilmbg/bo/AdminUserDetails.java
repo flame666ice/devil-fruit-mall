@@ -1,7 +1,7 @@
 package mall.fruit.devil.devilmbg.bo;
 
-import com.macro.mall.model.UmsAdmin;
-import com.macro.mall.model.UmsResource;
+import mall.fruit.devil.devilmbg.entity.UmsResource;
+import mall.fruit.devil.devilmbg.entity.UmsAdmin;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

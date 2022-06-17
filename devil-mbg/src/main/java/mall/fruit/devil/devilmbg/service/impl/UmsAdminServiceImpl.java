@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import mall.fruit.devil.devilcommon.exception.Asserts;
 import mall.fruit.devil.devilcommon.util.RequestUtil;
+import mall.fruit.devil.devilmbg.bo.AdminUserDetails;
 import mall.fruit.devil.devilmbg.entity.*;
 import mall.fruit.devil.devilmbg.entitycustom.UmsAdminParam;
 import mall.fruit.devil.devilmbg.entitycustom.UpdateAdminPasswordParam;

@@ -93,7 +93,7 @@ public class SmsFlashPromotionController {
         Page<SmsFlashPromotion> page = new Page<>(pageNum,pageSize);
         QueryWrapper<SmsFlashPromotion> wrapper = new QueryWrapper<>();
         if (!StringUtils.isEmpty(keyword)) {
-            wrapper.like("title",keyword)
+            wrapper.like("title",keyword);
         }
         Page<SmsFlashPromotion> result = flashPromotionMapper.selectPage(page,wrapper);
         return CommonResult.success(CommonPage.restPage(result));

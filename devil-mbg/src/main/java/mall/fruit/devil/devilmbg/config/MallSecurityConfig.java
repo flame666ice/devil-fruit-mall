@@ -36,9 +36,7 @@ public class MallSecurityConfig extends SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息
-        return username -> {
-            QueryWrapper<UmsAdmin> wrapper =
-            return adminService.loadUserByUsername(username);};
+        return username -> adminService.loadUserByUsername(username);
     }
 
     @Bean
