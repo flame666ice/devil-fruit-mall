@@ -49,7 +49,7 @@ public class UmsAdminController {
 
     @ApiOperation(value = "用户注册")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public CommonResult<UmsAdmin> register(@Validated UmsAdminParam umsAdminParam) {
+    public CommonResult<UmsAdmin> register(@Validated @RequestBody UmsAdminParam umsAdminParam) {
         UmsAdmin umsAdmin = adminService.register(umsAdminParam);
         if (umsAdmin == null) {
             return CommonResult.failed();
@@ -59,7 +59,8 @@ public class UmsAdminController {
 
     @ApiOperation(value = "登录以后返回token")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public CommonResult login(@Validated UmsAdminLoginParam umsAdminLoginParam) {
+    @ResponseBody
+    public CommonResult login(@Validated @RequestBody UmsAdminLoginParam umsAdminLoginParam) {
         String token = adminService.login(umsAdminLoginParam.getUsername(), umsAdminLoginParam.getPassword());
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
@@ -132,7 +133,7 @@ public class UmsAdminController {
 
     @ApiOperation("修改指定用户信息")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id, UmsAdmin admin) {
+    public CommonResult update(@PathVariable Long id, @RequestBody UmsAdmin admin) {
         int count = adminService.update(id, admin);
         if (count > 0) {
             return CommonResult.success(count);
@@ -142,7 +143,7 @@ public class UmsAdminController {
 
     @ApiOperation("修改指定用户密码")
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
-    public CommonResult updatePassword(@Validated UpdateAdminPasswordParam updatePasswordParam) {
+    public CommonResult updatePassword(@Validated @RequestBody UpdateAdminPasswordParam updatePasswordParam) {
         int status = adminService.updatePassword(updatePasswordParam);
         if (status > 0) {
             return CommonResult.success(status);

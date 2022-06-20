@@ -1,5 +1,6 @@
 package mall.fruit.devil;
 
+import io.jsonwebtoken.lang.Assert;
 import mall.fruit.devil.entity.UmsAdmin;
 import mall.fruit.devil.service.IUmsAdminService;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.filter.CorsFilter;
+
+import java.util.Timer;
 
 @SpringBootTest
 class DevilMbgApplicationTests {
@@ -18,6 +22,18 @@ class DevilMbgApplicationTests {
 
     @Autowired
     IUmsAdminService adminService;
+
+    @Autowired
+    CorsFilter corsFilter;
+
+  //  @Autowired
+ //   Timer timer;
+
+    @Test
+    void beanTest(){
+        Assert.notNull(corsFilter);
+       // Assert.notNull(timer);
+    }
 
     @Test
     void changePassword(){

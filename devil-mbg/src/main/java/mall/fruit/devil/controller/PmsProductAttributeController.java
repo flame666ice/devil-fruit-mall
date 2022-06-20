@@ -59,7 +59,7 @@ public class PmsProductAttributeController {
 
     @ApiOperation("添加商品属性信息")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(PmsProductAttributeParam productAttributeParam) {
+    public CommonResult create(@RequestBody PmsProductAttributeParam productAttributeParam) {
         PmsProductAttribute pmsProductAttribute = new PmsProductAttribute();
         BeanUtils.copyProperties(productAttributeParam, pmsProductAttribute);
         int count = pmsProductAttributeMapper.insert(pmsProductAttribute);
@@ -80,7 +80,7 @@ public class PmsProductAttributeController {
 
     @ApiOperation("修改商品属性信息")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id, PmsProductAttributeParam productAttributeParam) {
+    public CommonResult update(@PathVariable Long id, @RequestBody PmsProductAttributeParam productAttributeParam) {
         PmsProductAttribute pmsProductAttribute = new PmsProductAttribute();
         pmsProductAttribute.setId(id);
         BeanUtils.copyProperties(productAttributeParam, pmsProductAttribute);

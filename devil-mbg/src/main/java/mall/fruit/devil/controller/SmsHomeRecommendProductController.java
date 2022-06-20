@@ -31,7 +31,7 @@ public class SmsHomeRecommendProductController {
 
     @ApiOperation("添加首页推荐")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( List<SmsHomeRecommendProduct> homeRecommendProductList) {
+    public CommonResult create(@RequestBody List<SmsHomeRecommendProduct> homeRecommendProductList) {
         for (SmsHomeRecommendProduct recommendProduct : homeRecommendProductList) {
             recommendProduct.setRecommendStatus(1);
             recommendProduct.setSort(0);

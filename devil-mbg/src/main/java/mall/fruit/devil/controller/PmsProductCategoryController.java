@@ -57,7 +57,7 @@ public class PmsProductCategoryController {
 
     @ApiOperation("添加商品分类")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(@Validated PmsProductCategoryParam productCategoryParam) {
+    public CommonResult create(@Validated @RequestBody PmsProductCategoryParam productCategoryParam) {
         PmsProductCategory productCategory = new PmsProductCategory();
         productCategory.setProductCount(0);
         BeanUtils.copyProperties(productCategoryParam, productCategory);
@@ -98,7 +98,7 @@ public class PmsProductCategoryController {
     @ApiOperation("修改商品分类")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public CommonResult update(@PathVariable Long id,
-                               @Validated PmsProductCategoryParam productCategoryParam) {
+                               @Validated @RequestBody PmsProductCategoryParam productCategoryParam) {
         PmsProductCategory productCategory = new PmsProductCategory();
         productCategory.setId(id);
         BeanUtils.copyProperties(productCategoryParam, productCategory);

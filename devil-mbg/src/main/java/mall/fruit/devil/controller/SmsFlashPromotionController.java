@@ -33,7 +33,7 @@ public class SmsFlashPromotionController {
 
     @ApiOperation("添加活动")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( SmsFlashPromotion flashPromotion) {
+    public CommonResult create(@RequestBody SmsFlashPromotion flashPromotion) {
         flashPromotion.setCreateTime(LocalDateTime.now());
         int count = flashPromotionMapper.insert(flashPromotion);
         if (count > 0) {
@@ -44,7 +44,7 @@ public class SmsFlashPromotionController {
 
     @ApiOperation("编辑活动")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public Object update(@PathVariable Long id,  SmsFlashPromotion flashPromotion) {
+    public Object update(@PathVariable Long id,@RequestBody  SmsFlashPromotion flashPromotion) {
         flashPromotion.setId(id);
         int count = flashPromotionMapper.updateById(flashPromotion);
         if (count > 0) {

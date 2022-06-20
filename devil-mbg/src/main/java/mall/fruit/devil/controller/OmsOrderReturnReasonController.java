@@ -38,7 +38,7 @@ public class OmsOrderReturnReasonController {
 
     @ApiOperation("添加退货原因")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(OmsOrderReturnReason returnReason) {
+    public CommonResult create(@RequestBody OmsOrderReturnReason returnReason) {
         returnReason.setCreateTime(LocalDateTime.now());
         int count = omsOrderReturnReasonMapper.insert(returnReason);
         if (count > 0) {
@@ -49,7 +49,7 @@ public class OmsOrderReturnReasonController {
 
     @ApiOperation("修改退货原因")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id, OmsOrderReturnReason returnReason) {
+    public CommonResult update(@PathVariable Long id, @RequestBody OmsOrderReturnReason returnReason) {
         returnReason.setId(id);
         int count = omsOrderReturnReasonMapper.updateById(returnReason);
         if (count > 0) {

@@ -49,7 +49,7 @@ public class PmsBrandController {
 
     @ApiOperation(value = "添加品牌")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(@Validated PmsBrandParam pmsBrand) {
+    public CommonResult create(@Validated @RequestBody PmsBrandParam pmsBrand) {
         CommonResult commonResult;
 
         PmsBrand mBrand = new PmsBrand();
@@ -73,7 +73,7 @@ public class PmsBrandController {
     @ApiOperation(value = "更新品牌")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public CommonResult update(@PathVariable("id") Long id,
-                               @Validated PmsBrandParam pmsBrandParam) {
+                               @Validated @RequestBody PmsBrandParam pmsBrandParam) {
         CommonResult commonResult;
         PmsBrand pmsBrand = new PmsBrand();
         BeanUtils.copyProperties(pmsBrandParam, pmsBrand);

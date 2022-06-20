@@ -163,7 +163,7 @@ public class PmsProductController {
 
     @ApiOperation("创建商品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( PmsProductParam productParam) {
+    public CommonResult create(@RequestBody PmsProductParam productParam) {
         int count;
         PmsProduct product = productParam;
         product.setId(null);
@@ -201,7 +201,7 @@ public class PmsProductController {
 
     @ApiOperation("更新商品")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id, PmsProductParam productParam) {
+    public CommonResult update(@PathVariable Long id, @RequestBody PmsProductParam productParam) {
         int count;
         //更新商品信息
         PmsProduct product = productParam;

@@ -35,7 +35,7 @@ public class SmsHomeAdvertiseController {
 
     @ApiOperation("添加广告")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(SmsHomeAdvertise advertise) {
+    public CommonResult create(@RequestBody SmsHomeAdvertise advertise) {
         advertise.setClickCount(0);
         advertise.setOrderCount(0);
         int count = advertiseMapper.insert(advertise);
@@ -77,7 +77,7 @@ public class SmsHomeAdvertiseController {
 
     @ApiOperation("修改广告")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id,  SmsHomeAdvertise advertise) {
+    public CommonResult update(@PathVariable Long id,@RequestBody  SmsHomeAdvertise advertise) {
         advertise.setId(id);
         int count =  advertiseMapper.updateById(advertise);
         if (count > 0)

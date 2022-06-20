@@ -39,7 +39,7 @@ public class UmsMenuController {
 
     @ApiOperation("添加后台菜单")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( UmsMenu umsMenu) {
+    public CommonResult create( @RequestBody UmsMenu umsMenu) {
         umsMenu.setCreateTime(LocalDateTime.now());
         if (umsMenu.getParentId() == 0) {
             //没有父菜单时为一级菜单
@@ -64,7 +64,7 @@ public class UmsMenuController {
     @ApiOperation("修改后台菜单")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public CommonResult update(@PathVariable Long id,
-                               UmsMenu umsMenu) {
+                               @RequestBody UmsMenu umsMenu) {
         umsMenu.setId(id);
         if (umsMenu.getParentId() == 0) {
             //没有父菜单时为一级菜单

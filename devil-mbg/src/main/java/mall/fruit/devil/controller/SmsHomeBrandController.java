@@ -32,7 +32,7 @@ public class SmsHomeBrandController {
 
     @ApiOperation("添加首页推荐品牌")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( List<SmsHomeBrand> homeBrandList) {
+    public CommonResult create( @RequestBody List<SmsHomeBrand> homeBrandList) {
         for (SmsHomeBrand smsHomeBrand : homeBrandList) {
             smsHomeBrand.setRecommendStatus(1);
             smsHomeBrand.setSort(0);

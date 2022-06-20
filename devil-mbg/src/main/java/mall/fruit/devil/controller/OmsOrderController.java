@@ -59,7 +59,7 @@ public class OmsOrderController {
 
     @ApiOperation("批量发货")
     @RequestMapping(value = "/update/delivery", method = RequestMethod.POST)
-    public CommonResult delivery(List<OmsOrderDeliveryParam> deliveryParamList){
+    public CommonResult delivery(@RequestBody List<OmsOrderDeliveryParam> deliveryParamList){
 
         int count = omsOrderDao.delivery(deliveryParamList);
         List <OmsOrderOperateHistory> omsOrderOperateHistoryList = deliveryParamList.stream()
@@ -130,7 +130,7 @@ public class OmsOrderController {
 
     @ApiOperation("修改收货人信息")
     @RequestMapping(value = "/update/receiverInfo", method = RequestMethod.POST)
-    public CommonResult updateReceiverInfo(OmsReceiverInfoParam receiverInfoParam) {
+    public CommonResult updateReceiverInfo(@RequestBody OmsReceiverInfoParam receiverInfoParam) {
         OmsOrder order = new OmsOrder();
         order.setId(receiverInfoParam.getOrderId());
         order.setReceiverName(receiverInfoParam.getReceiverName());
@@ -157,7 +157,7 @@ public class OmsOrderController {
 
     @ApiOperation("修改订单费用信息")
     @RequestMapping(value = "/update/moneyInfo", method = RequestMethod.POST)
-    public CommonResult updateReceiverInfo(OmsMoneyInfoParam moneyInfoParam) {
+    public CommonResult updateReceiverInfo(@RequestBody OmsMoneyInfoParam moneyInfoParam) {
         OmsOrder order = new OmsOrder();
         order.setId(moneyInfoParam.getOrderId());
         order.setFreightAmount(moneyInfoParam.getFreightAmount());

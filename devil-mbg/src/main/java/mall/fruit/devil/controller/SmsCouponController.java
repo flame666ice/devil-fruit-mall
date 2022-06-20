@@ -60,7 +60,7 @@ public class SmsCouponController {
 
     @ApiOperation("添加优惠券")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult add( SmsCouponParam couponParam) {
+    public CommonResult add( @RequestBody SmsCouponParam couponParam) {
         couponParam.setCount(couponParam.getPublishCount());
         couponParam.setUseCount(0);
         couponParam.setReceiveCount(0);
@@ -102,7 +102,7 @@ public class SmsCouponController {
 
     @ApiOperation("修改优惠券")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id, SmsCouponParam couponParam) {
+    public CommonResult update(@PathVariable Long id,@RequestBody SmsCouponParam couponParam) {
         couponParam.setId(id);
         int count = couponMapper.updateById(couponParam);
         //删除后插入优惠券和商品关系表

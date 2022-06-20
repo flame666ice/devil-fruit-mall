@@ -47,7 +47,7 @@ public class PmsSkuStockController {
 
     @ApiOperation("批量更新sku库存信息")
     @RequestMapping(value ="/update/{pid}",method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long pid,List<PmsSkuStock> skuStockList){
+    public CommonResult update(@PathVariable Long pid,@RequestBody List<PmsSkuStock> skuStockList){
         int count =  skuStockDao.replaceList(skuStockList);
         if(count>0){
             return CommonResult.success(count);

@@ -32,7 +32,7 @@ public class UmsRoleController {
 
     @ApiOperation("添加角色")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( UmsRole role) {
+    public CommonResult create(@RequestBody UmsRole role) {
         int count = roleService.create(role);
         if (count > 0) {
             return CommonResult.success(count);
@@ -42,7 +42,7 @@ public class UmsRoleController {
 
     @ApiOperation("修改角色")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id,  UmsRole role) {
+    public CommonResult update(@PathVariable Long id, @RequestBody UmsRole role) {
         int count = roleService.update(id, role);
         if (count > 0) {
             return CommonResult.success(count);

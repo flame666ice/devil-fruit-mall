@@ -33,7 +33,7 @@ public class SmsHomeNewProductController {
 
     @ApiOperation("添加首页新品")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( List<SmsHomeNewProduct> homeNewProductList) {
+    public CommonResult create(@RequestBody List<SmsHomeNewProduct> homeNewProductList) {
         for (SmsHomeNewProduct SmsHomeNewProduct : homeNewProductList) {
             SmsHomeNewProduct.setRecommendStatus(1);
             SmsHomeNewProduct.setSort(0);

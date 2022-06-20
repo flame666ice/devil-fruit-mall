@@ -36,7 +36,7 @@ public class UmsResourceCategoryController {
 
     @ApiOperation("添加后台资源分类")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( UmsResourceCategory umsResourceCategory) {
+    public CommonResult create(@RequestBody UmsResourceCategory umsResourceCategory) {
         umsResourceCategory.setCreateTime(LocalDateTime.now());
         int count = resourceCategoryMapper.insert(umsResourceCategory);
         if (count > 0) {
@@ -49,7 +49,7 @@ public class UmsResourceCategoryController {
     @ApiOperation("修改后台资源分类")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public CommonResult update(@PathVariable Long id,
-                               UmsResourceCategory umsResourceCategory) {
+                               @RequestBody UmsResourceCategory umsResourceCategory) {
         umsResourceCategory.setId(id);
         int count = resourceCategoryMapper.updateById(umsResourceCategory);
         if (count > 0) {

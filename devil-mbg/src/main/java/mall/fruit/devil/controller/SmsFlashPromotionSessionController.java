@@ -40,7 +40,7 @@ public class SmsFlashPromotionSessionController {
 
     @ApiOperation("添加场次")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create(SmsFlashPromotionSession promotionSession) {
+    public CommonResult create(@RequestBody SmsFlashPromotionSession promotionSession) {
         promotionSession.setCreateTime(LocalDateTime.now());
         int count = promotionSessionMapper.insert(promotionSession);
         if (count > 0) {
@@ -51,7 +51,7 @@ public class SmsFlashPromotionSessionController {
 
     @ApiOperation("修改场次")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id,  SmsFlashPromotionSession promotionSession) {
+    public CommonResult update(@PathVariable Long id, @RequestBody SmsFlashPromotionSession promotionSession) {
         promotionSession.setId(id);
         int count = promotionSessionMapper.updateById(promotionSession);
         if (count > 0) {

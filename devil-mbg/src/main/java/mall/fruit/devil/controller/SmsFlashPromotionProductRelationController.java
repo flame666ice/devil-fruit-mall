@@ -34,7 +34,7 @@ public class SmsFlashPromotionProductRelationController {
 
     @ApiOperation("批量选择商品添加关联")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( List<SmsFlashPromotionProductRelation> relationList) {
+    public CommonResult create(@RequestBody List<SmsFlashPromotionProductRelation> relationList) {
         for (SmsFlashPromotionProductRelation relation : relationList) {
             relationMapper.insert(relation);
         }
@@ -47,7 +47,7 @@ public class SmsFlashPromotionProductRelationController {
 
     @ApiOperation("修改关联信息")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public CommonResult update(@PathVariable Long id,  SmsFlashPromotionProductRelation relation) {
+    public CommonResult update(@PathVariable Long id, @RequestBody SmsFlashPromotionProductRelation relation) {
         relation.setId(id);
         int count = relationMapper.updateById(relation);
         if (count > 0) {

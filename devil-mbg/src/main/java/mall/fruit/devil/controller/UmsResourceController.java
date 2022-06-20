@@ -32,7 +32,7 @@ public class UmsResourceController {
 
     @ApiOperation("添加后台资源")
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public CommonResult create( UmsResource umsResource) {
+    public CommonResult create(@RequestBody UmsResource umsResource) {
         int count = resourceService.create(umsResource);
         dynamicSecurityMetadataSource.clearDataSource();
         if (count > 0) {
@@ -45,7 +45,7 @@ public class UmsResourceController {
     @ApiOperation("修改后台资源")
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public CommonResult update(@PathVariable Long id,
-                               UmsResource umsResource) {
+                               @RequestBody UmsResource umsResource) {
         int count = resourceService.update(id, umsResource);
         dynamicSecurityMetadataSource.clearDataSource();
         if (count > 0) {
