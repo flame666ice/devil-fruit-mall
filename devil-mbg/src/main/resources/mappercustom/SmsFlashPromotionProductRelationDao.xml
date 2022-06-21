@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.mappercustom.SmsFlashPromotionProductRelationDao">
-    <resultMap id="flashProductMap" type="mall.fruit.devil.entitycustom.SmsFlashPromotionProduct" extends="SmsFlashPromotionProductRelationMapper.BaseResultMap">
+    <resultMap id="flashProductMap" type="SmsFlashPromotionProduct" extends="SmsFlashPromotionProductRelationMapper.BaseResultMap">
         <association property="product" resultMap="PmsProductMapper.BaseResultMap" columnPrefix="p_"/>
     </resultMap>
     <select id="getList" resultMap="flashProductMap">

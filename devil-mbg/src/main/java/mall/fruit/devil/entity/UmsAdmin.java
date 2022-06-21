@@ -5,6 +5,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -33,7 +38,7 @@ public class UmsAdmin implements Serializable {
     private String icon;
 
     @ApiModelProperty("邮箱")
-    private String eml;
+    private String email;
 
     @ApiModelProperty("昵称")
     private String nickName;
@@ -41,9 +46,13 @@ public class UmsAdmin implements Serializable {
     @ApiModelProperty("备注信息")
     private String note;
 
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @ApiModelProperty("创建时间")
     private LocalDateTime createTime;
 
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @ApiModelProperty("最后登录时间")
     private LocalDateTime loginTime;
 
@@ -84,11 +93,11 @@ public class UmsAdmin implements Serializable {
     }
 
     public String getEml() {
-        return eml;
+        return email;
     }
 
-    public void setEml(String eml) {
-        this.eml = eml;
+    public void setEml(String email) {
+        this.email = email;
     }
 
     public String getNickName() {
@@ -138,7 +147,7 @@ public class UmsAdmin implements Serializable {
         ", username=" + username +
         ", password=" + password +
         ", icon=" + icon +
-        ", eml=" + eml +
+        ", email=" + email +
         ", nickName=" + nickName +
         ", note=" + note +
         ", createTime=" + createTime +

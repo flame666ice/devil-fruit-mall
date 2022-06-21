@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.mappercustom.SmsCouponDao">
-    <resultMap id="couponItemParam" type="mall.fruit.devil.entitycustom.SmsCouponParam" extends="SmsCouponMapper.BaseResultMap">
+    <resultMap id="couponItemParam" type="SmsCouponParam" extends="SmsCouponMapper.BaseResultMap">
         <collection property="productRelationList" columnPrefix="cpr_" resultMap="SmsCouponProductRelationMapper.BaseResultMap">
         </collection>
         <collection property="productCategoryRelationList" columnPrefix="cpcr_" resultMap="SmsCouponProductCategoryRelationMapper.BaseResultMap">

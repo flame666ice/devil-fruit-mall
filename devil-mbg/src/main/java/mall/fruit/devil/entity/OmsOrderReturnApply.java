@@ -6,6 +6,11 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -38,6 +43,8 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty("订单编号")
     private String orderSn;
 
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @ApiModelProperty("申请时间")
     private LocalDateTime createTime;
 
@@ -56,6 +63,8 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty("申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
     private Integer status;
 
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @ApiModelProperty("处理时间")
     private LocalDateTime handleTime;
 
@@ -98,6 +107,8 @@ public class OmsOrderReturnApply implements Serializable {
     @ApiModelProperty("收货人")
     private String receiveMan;
 
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     @ApiModelProperty("收货时间")
     private LocalDateTime receiveTime;
 

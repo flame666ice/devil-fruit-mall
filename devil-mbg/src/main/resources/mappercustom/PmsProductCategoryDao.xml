@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.mappercustom.PmsProductCategoryDao">
-    <resultMap id="listWithChildrenMap" type="mall.fruit.devil.entitycustom.PmsProductCategoryWithChildrenItem"
+    <resultMap id="listWithChildrenMap" type="PmsProductCategoryWithChildrenItem"
                extends="PmsProductCategoryMapper.BaseResultMap">
         <collection property="children" resultMap="PmsProductCategoryMapper.BaseResultMap"
                     columnPrefix="child_"></collection>

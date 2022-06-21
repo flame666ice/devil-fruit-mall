@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mall.fruit.devil.mappercustom.PmsProductDao">
-    <resultMap id="updateInfoMap" type="mall.fruit.devil.entitycustom.PmsProductResult" extends="PmsProductMapper.ResultMapWithBLOBs">
+    <resultMap id="updateInfoMap" type="PmsProductResult" extends="PmsProductMapper.ResultMapWithBLOBs">
         <result column="cateParentId" jdbcType="BIGINT" property="cateParentId" />
         <collection property="productLadderList" columnPrefix="ladder_" resultMap="PmsProductLadderMapper.BaseResultMap">
         </collection>
@@ -38,8 +38,8 @@
     <select id="selectSubjectProductRelationByProductId" resultMap="CmsSubjectProductRelationMapper.BaseResultMap">
         select * from cms_subject_product_relation where product_id=#{productId}
     </select>
-    <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="mall.fruit.devil.mapper.CmsPrefrenceAreaProductRelationMapper.BaseResultMap">
-        select * from cms_prefrence_area_product_relation where product_id=#{productId}
+    <select id="selectPrefrenceAreaProductRelationByProductId" resultMap="CmsPreferenceAreaProductRelationMapper.BaseResultMap">
+        select * from cms_preference_area_product_relation where product_id=#{productId}
     </select>
 
 </mapper>
