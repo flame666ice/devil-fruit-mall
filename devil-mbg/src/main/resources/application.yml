@@ -50,10 +50,10 @@ secure:
       - /minio/upload
 
 redis:
-  database: mall
+  database: devil
   key:
-    admin: 'ums:admin'
-    resourceList: 'ums:resourceList'
+    admin: 'devil:ums:admin'
+    resourceList: 'devil:ums:resourceList'
   expire:
     common: 86400 # 24小时
 
@@ -68,6 +68,12 @@ aliyun:
     policy:
       expire: 300 # 签名有效期(S)
     maxSize: 10 # 上传文件大小(M)
-    callback: http://39.98.190.128:8080/aliyun/oss/callback # 文件上传成功后的回调地址
+    callback: localhost:8080/aliyun/oss/callback # 文件上传成功后的回调地址
     dir:
       prefix: mall/images/ # 上传文件夹路径前缀
+
+minio:
+  endpoint: http://43.138.158.204:9000 #MinIO服务所在地址
+  bucketName: fruit #存储桶名称
+  accessKey: root #访问的key
+  secretKey: devil159265 #访问的秘钥
