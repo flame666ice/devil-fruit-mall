@@ -13,11 +13,17 @@ Spring:
         login-username: druid
         login-password: druid
   redis:
-    host: 43.138.158.204 # Redis服务器地址
-    database: 0 # Redis数据库索引（默认为0）
-    port: 6379 # Redis服务器连接端口
+    #host: 43.138.158.204 # Redis服务器地址
+    #database: 0 # Redis数据库索引（默认为0）
+    #port: 6379 # Redis服务器连接端口
     password: # Redis服务器连接密码（默认为空）
-    timeout: 300ms # 连接超时时间（毫秒）
+    timeout: 3000ms # 连接超时时间（毫秒）
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
     cluster:
       nodes:
         - 43.138.158.204:7001
