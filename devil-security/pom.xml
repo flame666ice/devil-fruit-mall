@@ -10,6 +10,7 @@
     <groupId>mall.fruit.devil</groupId>
     <artifactId>devil-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>devil-security</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -51,14 +52,5 @@
         </dependency>
     </dependencies>
 
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
